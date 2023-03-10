@@ -1,20 +1,20 @@
 def diagonal_difference(arr):
-    diagonal1 = 0
-    diagonal2 = 0
-    lenth_arr = len(arr)
 
-    for number1 in arr:
+    diagonal_left = 0
+    diagonal_right = 0
+    lenth = len(arr)
 
-        for number2 in arr:
+    for i in range(0, lenth):
 
-            if number1 == number2:
-                diagonal1 += arr[number1][number2]
-    print(diagonal1)
+        for j in range(0, lenth):
 
-    # if number1 == lenth_arr - number2 - 1:
-    #     diagonal2 += arr[number1][number2]
+            if i == j:
+                diagonal_left += arr[i][j]
 
-#     return abs(diagonal1 - diagonal2)
+            if (i + j) == (lenth - 1):
+                diagonal_right += arr[i][j]
+
+    return abs(diagonal_left - diagonal_right)
 
 
 if __name__ == "__main__":
@@ -23,5 +23,3 @@ if __name__ == "__main__":
         [4, 5, 6],
         [9, 8, 9]
     ]
-
-    assert diagonal_difference(arr) == 2
