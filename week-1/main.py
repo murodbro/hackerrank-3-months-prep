@@ -1,17 +1,16 @@
-class Point:
-    default_color = "red"
-
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
-
-    @classmethod
-    def zero(cls):
-        return cls(0, 0)
-
-    def draw(self):
-        print(f"Point ({self.x}, {self.y})")
+class Employee:
+    def greet(self):
+        print("Employee Greet")
 
 
-point = Point.zero()
-point.draw()
+class Person:
+    def greet(self):
+        print("Person Greet")
+
+
+class Manager(Employee, Person):
+    pass
+
+
+manager = Manager()
+manager.greet()
